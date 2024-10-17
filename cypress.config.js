@@ -6,6 +6,10 @@ module.exports = defineConfig({
       // implement node event listeners here
       
     },
-    video: true
+    "baseUrl": 'https://automationpratice.com.br/',
   },
+  "video": true,
+  "viewportWidth": 1366,
+  "viewportHeight": 768,
+  "defaultCommandTimeout": 10000
 });

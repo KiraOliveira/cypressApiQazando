@@ -85,12 +85,12 @@ describe('Search Devices', () => {
   })
 
   // Cenário de teste 05
-  it('Add Object', () => {
+  it.only('Add Object', () => {
     cy.request({
       method: 'POST',
-      url: 'https://api.restful-api.dev/objects',
+      url: '/objects',
       body: {
-          "name": "Apple MacBook Pro 18",
+          "name": "Apple MacBook Pro 19",
           "data": {
               "year": 2024,
               "price": 1849.99,
@@ -104,7 +104,7 @@ describe('Search Devices', () => {
 
       expect(response.status).to.equal(200)
       expect(response.body.id).to.not.equal('')
-      expect(response.body.name).to.equal('Apple MacBook Pro 18')
+      expect(response.body.name).to.equal('Apple MacBook Pro 19')
       expect(response.body.data['CPU model']).to.equal('Intel Core i9')
       expect(response.body.data['Hard disk size']).to.equal('2 TB')
       expect(response.body.data.price).to.equal(1849.99)
