@@ -9,18 +9,15 @@ class LoginPage {
     acessarSite() {
         cy.visit(url)
     }
-
     // Clica no botão que acessa a página de login do site
     clicarBotaoPaginaLogin() {
         cy.get(loginElements.botaoAcessarLogin()).click()
     }
-
     // Tela de Login
     telaLogin() {
         cy.get(loginElements.modalLogin()).should('exist').and('be.visible')
         cy.get(loginElements.labelLogin()).should('exist').and('be.visible').and('have.text', 'Login')
     }
-
     // Realizando Login com Sucesso
     realizacaoLoginSucesso() {
         // Email

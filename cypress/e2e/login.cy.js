@@ -48,7 +48,7 @@ describe('Login', () => {
         loginPage.realizacaoLoginSenhaInvalida();
     })
     // Cenário 04 - Login Com Email Vazio
-    it('Cenário 03 - Login Com Email Vazio', () => {
+    it('Cenário 04 - Login Com Email Vazio', () => {
         cy.visit('/')
 
         // DADO - Acessar a tela de Login
@@ -62,7 +62,7 @@ describe('Login', () => {
         loginPage.realizacaoLoginEmailVazio();
     })
     // Cenário 05 - Login Com Senha Vazia
-    it('Cenário 03 - Login Com Senha Vazia', () => {
+    it('Cenário 05 - Login Com Senha Vazia', () => {
         cy.visit('/')
 
         // DADO - Acessar a tela de Login
