@@ -14,7 +14,7 @@
 
 * Após o clone do projeto ser realizado
 
-1 - Instalar o Cypress - npm install cypress --save-dev
-1 - Executar o Cypress - npx cypress open
+- Instalar o Cypress - npm install cypress --save-dev
+- Executar o Cypress - npx cypress open
 
 

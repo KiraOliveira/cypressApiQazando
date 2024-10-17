@@ -47,4 +47,32 @@ describe('Login', () => {
         // ENTÃO - Será realizado o login
         loginPage.realizacaoLoginSenhaInvalida();
     })
+    // Cenário 04 - Login Com Email Vazio
+    it('Cenário 03 - Login Com Email Vazio', () => {
+        cy.visit('/')
+
+        // DADO - Acessar a tela de Login
+        loginPage.acessarSite();
+        loginPage.clicarBotaoPaginaLogin();
+        loginPage.telaLogin();
+
+        // QUANDO - Inserir Email e Senha
+        // E - Clicar no botão de Login
+        // ENTÃO - Será realizado o login
+        loginPage.realizacaoLoginEmailVazio();
+    })
+    // Cenário 05 - Login Com Senha Vazia
+    it('Cenário 03 - Login Com Senha Vazia', () => {
+        cy.visit('/')
+
+        // DADO - Acessar a tela de Login
+        loginPage.acessarSite();
+        loginPage.clicarBotaoPaginaLogin();
+        loginPage.telaLogin();
+
+        // QUANDO - Inserir Email e Senha
+        // E - Clicar no botão de Login
+        // ENTÃO - Será realizado o login
+        loginPage.realizacaoLoginSenhaVazia();
+    })
 })

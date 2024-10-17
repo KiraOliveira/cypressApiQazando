@@ -8,8 +8,8 @@
         "senhaError": "1A25"
     },
     "mensagens": {
-        "emailInvalido": "E-mail inválido.",
-        "senhaInvalida": "Senha inválida."
+        "emailInvalidoVazio": "E-mail inválido.",
+        "senhaInvalidaVazia": "Senha inválida."
     }
   }
   

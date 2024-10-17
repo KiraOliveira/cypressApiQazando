@@ -63,7 +63,7 @@ class LoginPage {
         cy.get(loginElements.botaoLogin()).should('exist').and('be.visible').and('contain.text', 'login').click()
 
         // Mensagem Email Inválido
-        cy.get(loginElements.emailInvalido()).should('exist').and('be.visible').and('contain.text', login.mensagens.emailInvalido)
+        cy.get(loginElements.emailInvalido()).should('exist').and('be.visible').and('contain.text', login.mensagens.emailInvalidoVazio)
 
         cy.screenshot('loginComEmailInválido')
     }
@@ -83,22 +83,47 @@ class LoginPage {
         cy.get(loginElements.botaoLogin()).should('exist').and('be.visible').and('contain.text', 'login').click()
 
         // Mensagem Senha Inválida
-        cy.get(loginElements.senhaInvalida()).should('exist').and('be.visible').and('contain.text', login.mensagens.senhaInvalida)
+        cy.get(loginElements.senhaInvalida()).should('exist').and('be.visible').and('contain.text', login.mensagens.senhaInvalidaVazia)
 
         cy.screenshot('loginComSenhaInválida')
     }
-  
-    
-    
-    
-    
-    
-    
-    
-    // Verifica se o botão tem o texto "Esqueceu sua senha?"
-    //visualizarBotaoRecuperarSenha() {
-        //cy.get(loginElements.botaoRecuperarSenha()).should('contain', 'Esqueceu sua senha?')
-    //}
+    // Realizando Login com Email Vazio
+    realizacaoLoginEmailVazio() {
+        // Email
+        cy.get(loginElements.blocoEmail()).should('exist').and('be.visible')
+        cy.get(loginElements.labelEmail()).should('exist').and('be.visible').and('contain.text', 'E-mail')
+                
+        // Senha
+        cy.get(loginElements.blocoSenha()).should('exist').and('be.visible')
+        cy.get(loginElements.labelSenha()).should('exist').and('be.visible').and('contain.text', 'Senha')
+
+        // Botão de Login
+        cy.get(loginElements.botaoLogin()).should('exist').and('be.visible').and('contain.text', 'login').click()
+
+        // Mensagem Email Vazio
+        cy.get(loginElements.emailInvalido()).should('exist').and('be.visible').and('contain.text', login.mensagens.emailInvalidoVazio)
+
+        cy.screenshot('loginComEmailVazio')
+    }
+    // Realizando Login com Senha Vazia
+    realizacaoLoginSenhaVazia() {
+        // Email
+        cy.get(loginElements.blocoEmail()).should('exist').and('be.visible')
+        cy.get(loginElements.labelEmail()).should('exist').and('be.visible').and('contain.text', 'E-mail')
+        cy.get(loginElements.campoEmail()).should('exist').and('be.visible').type(login.email.emailSucess)
+        
+        // Senha
+        cy.get(loginElements.blocoSenha()).should('exist').and('be.visible')
+        cy.get(loginElements.labelSenha()).should('exist').and('be.visible').and('contain.text', 'Senha')
+
+        // Botão de Login
+        cy.get(loginElements.botaoLogin()).should('exist').and('be.visible').and('contain.text', 'login').click()
+
+        // Mensagem Senha Inválida
+        cy.get(loginElements.senhaInvalida()).should('exist').and('be.visible').and('contain.text', login.mensagens.senhaInvalidaVazia)
+
+        cy.screenshot('loginComSenhaVaz')
+    }
 }
 
 export default new LoginPage();

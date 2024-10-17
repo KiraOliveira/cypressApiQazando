@@ -8,6 +8,7 @@ module.exports = defineConfig({
     },
     "baseUrl": 'https://automationpratice.com.br/',
   },
+  projectId: "8scdkp",
   "video": true,
   "viewportWidth": 1366,
   "viewportHeight": 768,
